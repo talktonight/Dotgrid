@@ -149,6 +149,7 @@ function History () {
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
 }
 'use strict'
+
 function Source (client) {
   this.cache = {}
   this.install = () => {
@@ -231,6 +232,7 @@ function Source (client) {
     return (ms / 8640 / 10000).toFixed(6).substr(2, 6)
   }
 }
+
 'use strict'
 function Theme (client) {
   this.el = document.createElement('style')

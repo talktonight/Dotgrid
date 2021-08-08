@@ -30,7 +30,7 @@
 
 /* variables used */
 :root {
-     --bottom: 100px;
+     --bottom: 80px;
      --left: 150px;
 }
 
@@ -106,13 +106,16 @@ body {
     overflow: hidden;
     height:var(--bottom);
     width:100%;
+    top: 6px;
+    left: 6px;
 }
 
 #interface #menu svg.icon { 
     width:50px;
     height:50px;
-    margin-right:-9px;
     opacity: 0.6;
+    padding: 10px;
+    margin: -2px;
     transition: opacity 250ms;
 }
 
@@ -120,7 +123,8 @@ body {
 
 #interface #menu svg.icon:hover { 
     cursor: pointer;
-    opacity: 1.0 
+    opacity: 1.0 ;
+    background-color: #EEE;
 }
 
 #interface #menu svg.icon:last-child { margin-right: 0; }
@@ -132,11 +136,13 @@ body {
     stroke-width:12px;
 }
 
+/* it's what sets the left menu aside
 #interface #menu svg.icon.source { 
     float:right;
-    margin-left:-2px;
-    margin-right:0px;
+    padding: 10px;
+    margin: -2px;
 }
+*/
 
 #interface #menu svg.icon#option_color {
     opacity: 1.0;
@@ -168,7 +174,6 @@ body {
     content:"#";
     position: absolute;
     left:10px;
-    opacity: 0;
     transition: opacity 500ms
 }
 
@@ -218,6 +223,7 @@ body #interface {
     opacity: 0;
     transition: opacity 250ms, bottom 500ms;
     bottom:15px;
+    background: white;
 }
 
 body.ready #interface { 
