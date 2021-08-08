@@ -9,6 +9,9 @@
   </head>
   <body>
     <script>
+
+
+
 'use strict'
 function Acels (client) {
   this.el = document.createElement('ul')
@@ -614,16 +617,23 @@ function Cursor (client) {
     e.preventDefault()
   }
   this.move = function (e) {
-    this.pos = this.atEvent(e)
-    if (this.translation) {
-      this.translate(null, this.pos)
+    /* browsing the main screen */
+    if(!isHoverGazebar) {
+      this.pos = this.atEvent(e)
+
+      if (this.translation) {
+        this.translate(null, this.pos)
+      }
+      if (this.lastPos.x !== this.pos.x || this.lastPos.y !== this.pos.y) {
+        client.renderer.update()
+      }
+      client.interface.update()
+      this.lastPos = this.pos
+      e.preventDefault()
     }
-    if (this.lastPos.x !== this.pos.x || this.lastPos.y !== this.pos.y) {
-      client.renderer.update()
+    /* browsing the gazebar */
+    else { 
     }
-    client.interface.update()
-    this.lastPos = this.pos
-    e.preventDefault()
   }
   this.up = function (e) {
     this.pos = this.atEvent(e)
@@ -1551,5 +1561,6 @@ function Tool (client) {
         client.start()
       })
     </script>
+    <script src="scripts/gazebar.js"></script>
   </body>
 </html>
