@@ -17,6 +17,48 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 88px;
+    outline: none;
+    background-color: #ddd;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  width: 88px; 
+  height: 88px; 
+  background: #999; /* Green background */
+  cursor: pointer; 
+}
+#top {
+  width: 95%;
+  margin-left: 5%;
+  height: 88px;
+  background-color: #ddd;
+}
+
+#left {
+    width: 88px;
+    height: 55%;
+    background-color: #bbb;
+    margin-top: 10%;
+    position: absolute;
+}
+
+#right {
+    width: 88px;
+    height: 75%;
+    background-color: #ddd;
+    margin-left: 90%;
+    position: absolute;
+}
+
+#dot {
+    overflow: auto;
+    margin-left: 6%;
+}
+
 @font-face {
      font-family: 'input_mono_regular';
 
@@ -52,8 +94,6 @@ body {
 /* central area */
 #guide { 
     position: absolute;
-    width: 300px;
-    height: 300px;
     transition: opacity 150ms;
     -webkit-app-region: no-drag;
     border-radius: 3px;
@@ -79,11 +119,12 @@ body {
     text-transform: uppercase;
     -webkit-app-region: no-drag;
     transition: all 150ms;
-    width: 100%;
+    width: 80%;
+    margin-left: 5%;
     position:fixed;
     bottom:30px;
     left:40px;
-    height:var(--bottom);
+    height:10%;
     max-width:calc(100vw - 75px);
     overflow: hidden;
 }
@@ -105,15 +146,15 @@ body {
     transition: all 250ms;
     z-index: 900;
     overflow: hidden;
-    height:var(--bottom);
+    height:100%;
     width:100%;
     top: 6px;
     left: 6px;
 }
 
 #interface #menu svg.icon { 
-    width:50px;
-    height:50px;
+    width:88px;
+    height:88px;
     opacity: 0.6;
     padding: 10px;
     margin: -2px;

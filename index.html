@@ -8,8 +8,20 @@
     <title>Dotgrid</title>
   </head>
   <body>
+    <div id ="top">  
+      <input type="range" min="1" max="100" value="50" class="slider">
+  </div>
+    <div id ="left">
+      <input type="range" min="1" max="100" value="50" class="slider">
+    </div>
+    <div id ="right">
+      <input type="range" min="1" max="100" value="50" class="slider">
+    </div>
+
     <script>
 
+var scale = 1;
+var initialScale = 1;
 
 
 'use strict'
@@ -41,6 +53,10 @@ function Acels (client) {
       main.appendChild(subs)
       this.el.appendChild(main)
     }
+  }
+  this.onKeyUp = (e) => {
+    e.stopPropagation()
+    this.update()
   }
   this.set = (cat, name, accelerator, downfn, upfn) => {
     if (this.all[accelerator]) { console.warn('Acels', `Trying to overwrite ${this.all[accelerator].name}, with ${name}.`) }
@@ -1561,6 +1577,8 @@ function Tool (client) {
         client.start()
       })
     </script>
+  </div>
     <script src="scripts/gazebar.js"></script>
+    <script src="scripts/zoom.js"></script>
   </body>
 </html>

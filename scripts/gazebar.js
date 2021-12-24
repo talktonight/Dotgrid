@@ -3,13 +3,13 @@ let gazebar = document.getElementById("interface");
 
 gazebar.addEventListener("mouseleave", function(e) {
 	isHoverGazebar = false;
-	console.log("mouse at gazebar: " + isHoverGazebar);
+	console.log("cursor at gazebar: " + isHoverGazebar);
 });
 
 gazebar.addEventListener("mouseover", function(e) {
 	if (!isHoverGazebar) {
 		isHoverGazebar = true;
-		console.log("mouse at gazebar: " + isHoverGazebar);
+		console.log("cursor at gazebar: " + isHoverGazebar);
 	}
 });
 

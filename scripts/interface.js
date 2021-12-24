@@ -4,6 +4,11 @@ function Interface (client) {
   this.el = document.createElement('div')
   this.el.id = 'interface'
 
+
+  this.right = document.createElement('div')
+  this.right.id = 'right'
+  console.log("aaaaaaa")
+
   this.el.appendChild(this.menu_el = document.createElement('div'))
   this.menu_el.id = 'menu'
 
@@ -114,6 +119,17 @@ function Interface (client) {
     this.update(true)
     client.renderer.update(true)
   }
+
+  // zoom
+  this.addEventListener("keypress", function(e) {
+    if (e.keyCode === '104') { // 8
+      console.log("ARROW UP / / / / / / / /  \n");
+    }
+    if (e.keyCode === '105') { // 9
+      console.log("ARROW DOWN / / / / / / / /  \n");
+    }
+    console.log("jesus");
+  };
 
   this.prev_operation = null
 

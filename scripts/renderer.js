@@ -22,6 +22,7 @@ function Renderer (client) {
 
   this.update = function (force = false) {
     this.resize()
+    this.zoom()
     client.manager.update()
     const render = new Image()
     render.onload = () => {
@@ -66,6 +67,7 @@ function Renderer (client) {
     this.el.style.width = (_target.width) + 'px'
     this.el.style.height = (_target.height) + 'px'
   }
+
 
   // Collections
 

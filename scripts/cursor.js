@@ -67,8 +67,8 @@ function Cursor (client) {
 
   this.relativePos = function (pos) {
     return {
-      x: pos.x - client.renderer.el.offsetLeft,
-      y: pos.y - client.renderer.el.offsetTop
+      x: (pos.x - client.renderer.el.offsetLeft),
+      y: (pos.y - client.renderer.el.offsetTop)
     }
   }
 
