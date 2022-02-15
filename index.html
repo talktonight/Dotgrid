@@ -9,13 +9,13 @@
   </head>
   <body>
     <div id ="top">  
-      <input type="range" min="1" max="100" value="50" class="slider">
+      <input type="range" min="1" max="100" value="50" class="slider" id="top_slider">
   </div>
     <div id ="left">
-      <input type="range" min="1" max="100" value="50" class="slider">
+      <input type="range" min="1" max="100" value="50" class="slider" id="left_slider">
     </div>
     <div id ="right">
-      <input type="range" min="1" max="100" value="50" class="slider">
+      <input type="range" min="1" max="100" value="50" class="slider" id="right_slider">
     </div>
 
     <script>
@@ -409,10 +409,10 @@ function Client () {
     this.picker = new Picker(this)
     this.cursor = new Cursor(this)
     host.appendChild(this.renderer.el)
-    document.addEventListener('mousedown', (e) => { this.cursor.down(e) }, false)
-    document.addEventListener('mousemove', (e) => { this.cursor.move(e) }, false)
+    //document.addEventListener('mousedown', (e) => { this.cursor.down(e) }, false)
+    //document.addEventListener('mousemove', (e) => { this.cursor.move(e) }, false)
     document.addEventListener('contextmenu', (e) => { this.cursor.alt(e) }, false)
-    document.addEventListener('mouseup', (e) => { this.cursor.up(e) }, false)
+    //document.addEventListener('mouseup', (e) => { this.cursor.up(e) }, false)
     document.addEventListener('copy', (e) => { this.copy(e) }, false)
     document.addEventListener('cut', (e) => { this.cut(e) }, false)
     document.addEventListener('paste', (e) => { this.paste(e) }, false)
@@ -506,7 +506,7 @@ function Client () {
   }
   /* changes bottom / left padding */
   this.getPadding = () => {
-    return { x: 60, y: 150 }
+    return { x: 150, y: 300 }
   }
   this.getWindowSize = () => {
     return { width: window.innerWidth, height: window.innerHeight }
@@ -611,7 +611,7 @@ function Client () {
 }
 'use strict'
 function Cursor (client) {
-  this.pos = { x: 0, y: 0 }
+  this.pos = { x: 600, y: 450 }
   this.lastPos = { x: 0, y: 0 }
   this.translation = null
   this.operation = null
@@ -623,6 +623,13 @@ function Cursor (client) {
       this.translation = null
     }
   }
+  let topSlider = document.getElementById('top_slider')
+  let leftSlider = document.getElementById('left_slider')
+  let rightSlider = document.getElementById('right_slider')
+
+
+
+  /*
   this.down = function (e) {
     this.pos = this.atEvent(e)
     if (client.tool.vertexAt(this.pos)) {
@@ -633,7 +640,9 @@ function Cursor (client) {
     e.preventDefault()
   }
   this.move = function (e) {
-    /* browsing the main screen */
+    
+     browsing the main screen 
+
     if(!isHoverGazebar) {
       this.pos = this.atEvent(e)
 
@@ -647,9 +656,10 @@ function Cursor (client) {
       this.lastPos = this.pos
       e.preventDefault()
     }
-    /* browsing the gazebar */
+     browsing the gazebar 
     else { 
     }
+    
   }
   this.up = function (e) {
     this.pos = this.atEvent(e)
@@ -689,7 +699,7 @@ function Cursor (client) {
   }
   function isEqual (a, b) { return a.x === b.x && a.y === b.y }
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }
-  function step (v, s) { return Math.round(v / s) * s }
+  function step (v, s) { return Math.round(v / s) * s }*/
 }
 'use strict'
 function Generator (layer, style) {

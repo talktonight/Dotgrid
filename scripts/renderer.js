@@ -61,8 +61,8 @@ function Renderer (client) {
     if (offset.width === 0 && offset.height === 0) {
       return
     }
-    console.log('Renderer', `Require resize: ${printSize(_target)}, from ${printSize(_current)}`)
-    this.el.width = (_target.width) * this.scale
+    console.log('Renderer', `aaaaaRequire resize: ${printSize(_target)}, from ${printSize(_current)}`)
+    this.el.width = (_target.width) * this.scale 
     this.el.height = (_target.height) * this.scale
     this.el.style.width = (_target.width) + 'px'
     this.el.style.height = (_target.height) + 'px'
